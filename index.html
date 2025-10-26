@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Virus del Papiloma Humano (VPH)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vph-dark-blue': '#0B4F6C',
+                        'vph-teal': '#01BAEF',
+                        'vph-red': '#FF5A5F',
+                        'vph-grey': '#A9A9A9',
+                        'vph-bg': '#FBFBFF',
+                        'vph-text': '#0B4F6C',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-vph-bg text-vph-text">
+
+    <main class="container mx-auto p-4 py-8 md:p-12">
+
+        <header class="text-center mb-12">
+
+            <div>
+                <p>
+                    <h1 class="Nombre">
+                    Nombre: Alinson Jimenez Samboy
+                </h1>
+            <h2 class="matricula">
+                Matricula: 100692287
+            </h2></p>
+            </div>
+            <style> .Nombre{
+                font-size: 40px;
+            }
+            .matricula{
+                font-size: 40px;
+            } </style>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-vph-dark-blue mb-4">INFOGRAFÍA: VIRUS DEL PAPILOMA HUMANO (VPH)</h1>
+            <p class="text-lg text-gray-600">Una guía visual sobre la infección de transmisión sexual más común.</p>
+        </header>
+
+        <section class="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center mb-12 border-l-8 border-vph-red">
+            <h2 class="text-6xl md:text-8xl font-extrabold text-vph-red mb-4">>80%</h2>
+            <p class="text-xl md:text-2xl font-semibold text-vph-dark-blue">
+                De las personas sexualmente activas se infectarán con VPH en algún momento de su vida. Infórmate para prevenir.
+            </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <section class="md:col-span-2 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-vph-dark-blue mb-4">🦠 SECCIÓN 1: Identificación y Origen</h3>
+                <p class="text-gray-600 mb-6">
+                    El VPH es un virus con más de 200 tipos, clasificados por su riesgo. No todos los tipos de VPH causan problemas graves, pero es crucial entender la diferencia entre ellos.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <h4 class="text-lg font-semibold text-center text-vph-dark-blue">Impacto de Tipos de Alto Riesgo</h4>
+                        <div class="relative w-full max-w-sm mx-auto h-64 md:h-72">
+                            <canvas id="tiposCancerChart"></canvas>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-4 text-center">
+                            Los tipos 16 y 18 (alto riesgo) son responsables de aproximadamente el 70% de todos los cánceres cervicales.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-center text-vph-dark-blue">Impacto de Tipos de Bajo Riesgo</h4>
+                        <div class="relative w-full max-w-sm mx-auto h-64 md:h-72">
+                            <canvas id="tiposVerrugasChart"></canvas>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-4 text-center">
+                            Los tipos 6 y 11 (bajo riesgo) causan más del 90% de las verrugas genitales (condilomas).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="md:col-span-2 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-vph-dark-blue mb-4">🚨 SECCIÓN 2: Síntomas y Consecuencias Graves</h3>
+                <p class="text-gray-600 mb-6">
+                    Aunque el VPH es a menudo asintomático y se resuelve solo, las infecciones persistentes con tipos de alto riesgo son la causa principal de varios cánceres.
+                </p>
+                <div class="relative w-full max-w-2xl mx-auto h-96 md:h-[450px]">
+                    <canvas id="cancerChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-600 mt-4 text-center">
+                    Esta gráfica muestra el porcentaje estimado de cánceres específicos que son atribuibles a la infección por VPH de alto riesgo. El VPH es la causa de casi todos los cánceres cervicales.
+                </p>
+            </section>
+
+            <section class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-vph-dark-blue mb-6">🔁 SECCIÓN 3: Vías de Transmisión</h3>
+                <p class="text-gray-600 mb-6">
+                    El VPH se transmite principalmente por contacto íntimo de piel con piel. Es importante saber que la penetración no es necesaria para la transmisión.
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="text-center">
+                        <span class="inline-block bg-vph-teal text-white font-semibold py-3 px-6 rounded-lg shadow-md">
+                            Contacto Piel con Piel (Vía Principal)
+                        </span>
+                    </div>
+                    <div class="flex justify-center text-3xl text-vph-teal">
+                        <span class="transform rotate-90">➔</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <span class="text-3xl">♀️♂️</span>
+                            <p class="font-semibold text-vph-text mt-2">Contacto Vaginal</p>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                             <span class="text-3xl">♂️♂️</span>
+                            <p class="font-semibold text-vph-text mt-2">Contacto Anal</p>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                             <span class="text-3xl">👄</span>
+                            <p class="font-semibold text-vph-text mt-2">Contacto Oral</p>
+                        </div>
+                    </div>
+                    <div class="pt-4 text-center">
+                         <span class="inline-block bg-vph-grey text-white font-semibold py-3 px-6 rounded-lg shadow-md text-sm">
+                            Transmisión Materno-Fetal (Poco Común)
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-vph-dark-blue mb-6">🛡️ SECCIÓN 4: Medidas de Prevención</h3>
+                <p class="text-gray-600 mb-6">
+                    La prevención es el escudo más fuerte contra el VPH y sus consecuencias. Existen varias estrategias clave altamente efectivas.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl">💉</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-vph-dark-blue">1. Vacunación (La más efectiva)</h4>
+                            <p class="text-gray-600">Recomendada para niños y niñas (9-11 años). Protege contra los tipos de VPH que causan la mayoría de cánceres y verrugas.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl">🛡️</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-vph-dark-blue">2. Uso de Preservativos</h4>
+                            <p class="text-gray-600">Reduce el riesgo, pero no lo elimina por completo, ya que el virus puede estar en áreas no cubiertas por el condón.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl">🔬</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-vph-dark-blue">3. Pruebas de Detección (Tamizaje)</h4>
+                            <p class="text-gray-600">El Papanicolau y las pruebas de VPH detectan cambios celulares y la presencia del virus antes de que se desarrolle cáncer.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="md:col-span-2 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-vph-dark-blue mb-6">💊 SECCIÓN 5: Tratamiento Disponible</h3>
+                <p class="text-gray-600 mb-6">
+                    No existe cura para la infección viral en sí (el cuerpo suele eliminarla), pero sí existen tratamientos muy efectivos para las lesiones y problemas que causa el VPH.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 border-l-4 border-vph-teal p-6 rounded-lg">
+                        <h4 class="text-xl font-bold text-vph-dark-blue mb-2">Para Verrugas Genitales</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Crioterapia (congelación)</li>
+                            <li>Tratamientos tópicos</li>
+                            <li>Electrocauterización</li>
+                            <li>Extirpación quirúrgica</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 border-l-4 border-vph-red p-6 rounded-lg">
+                        <h4 class="text-xl font-bold text-vph-dark-blue mb-2">Para Lesiones Pre-cancerosas</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>LEEP (escisión)</li>
+                            <li>Conización</li>
+                            <li>Seguimiento médico</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 border-l-4 border-gray-500 p-6 rounded-lg">
+                        <h4 class="text-xl font-bold text-vph-dark-blue mb-2">Para Cáncer</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Tratamiento oncológico</li>
+                            <li>Cirugía</li>
+                            <li>Quimioterapia</li>
+                            <li>Radioterapia</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="text-center text-gray-500 text-sm mt-12">
+            <p>Infografía basada en información de fuentes de salud pública como la OMS y los CDC.</p>
+            <p>Este material es solo informativo y no reemplaza el consejo médico profesional.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            const commonPlugins = {
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    bodyFont: { size: 14 },
+                    titleFont: { size: 16 }
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { size: 12 },
+                        color: '#0B4F6C'
+                    }
+                }
+            };
+
+            const tiposCancerCtx = document.getElementById('tiposCancerChart')?.getContext('2d');
+            if (tiposCancerCtx) {
+                new Chart(tiposCancerCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['VPH Tipos 16 & 18', 'Otros Tipos VPH'],
+                        datasets: [{
+                            data: [70, 30],
+                            backgroundColor: ['#FF5A5F', '#vph-grey'],
+                            borderColor: '#ffffff',
+                            borderWidth: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: commonPlugins,
+                        cutout: '60%'
+                    }
+                });
+            }
+
+            const tiposVerrugasCtx = document.getElementById('tiposVerrugasChart')?.getContext('2d');
+            if (tiposVerrugasCtx) {
+                new Chart(tiposVerrugasCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['VPH Tipos 6 & 11', 'Otros Tipos VPH'],
+                        datasets: [{
+                            data: [90, 10],
+                            backgroundColor: ['#01BAEF', '#vph-grey'],
+                            borderColor: '#ffffff',
+                            borderWidth: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: commonPlugins,
+                        cutout: '60%'
+                    }
+                });
+            }
+
+            const cancerCtx = document.getElementById('cancerChart')?.getContext('2d');
+            if (cancerCtx) {
+                new Chart(cancerCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            'Cáncer Cervical', 
+                            'Cáncer Anal', 
+                            'Cáncer Vaginal', 
+                            ['Cáncer', 'Orofaringe'], 
+                            'Cáncer Vulvar', 
+                            'Cáncer de Pene'
+                        ],
+                        datasets: [{
+                            label: '% de Cánceres Atribuibles a VPH',
+                            data: [99, 91, 75, 70, 69, 63],
+                            backgroundColor: '#FF5A5F',
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                },
+                                bodyFont: { size: 14 },
+                                titleFont: { size: 16 }
+                            },
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                max: 100,
+                                ticks: {
+                                    callback: (value) => value + '%',
+                                    color: '#0B4F6C'
+                                },
+                                grid: {
+                                    color: '#e0e0e0'
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    color: '#0B4F6C',
+                                    font: {
+                                        size: 14
+                                    }
+                                },
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
